@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForjaDosAneis.Api", "ForjaDosAneis.Api\ForjaDosAneis.Api.csproj", "{9E607AEA-B4D6-4C49-BA91-EFACD0BD5A2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForjaDosAneis.Frontend", "ForjaDosAneis.Frontend\ForjaDosAneis.Frontend.csproj", "{661B2A46-2ED1-49CA-9D93-5EB8290F017A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E607AEA-B4D6-4C49-BA91-EFACD0BD5A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E607AEA-B4D6-4C49-BA91-EFACD0BD5A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E607AEA-B4D6-4C49-BA91-EFACD0BD5A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E607AEA-B4D6-4C49-BA91-EFACD0BD5A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{661B2A46-2ED1-49CA-9D93-5EB8290F017A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661B2A46-2ED1-49CA-9D93-5EB8290F017A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661B2A46-2ED1-49CA-9D93-5EB8290F017A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661B2A46-2ED1-49CA-9D93-5EB8290F017A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

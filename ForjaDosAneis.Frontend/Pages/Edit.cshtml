@@ -1,0 +1,53 @@
+@page "{id:int}"
+@model EditModel
+@inject IHttpClientFactory HttpClientFactory
+
+<h1 class="text-center my-4">Editar Anel</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post">
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger">
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <p>@error.ErrorMessage</p>
+                        }
+                    </div>
+                }
+                <input type="hidden" name="Anel.Id" value="@Model.Anel.Id" />
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="Anel.Nome" class="form-control" value="@Model.Anel.Nome" required />
+                </div>
+                <div class="form-group">
+                    <label for="poder">Poder:</label>
+                    <input type="text" id="poder" name="Anel.Poder" class="form-control" value="@Model.Anel.Poder" required />
+                </div>
+                <div class="form-group">
+                    <label for="portador">Portador:</label>
+                    <select id="portador" name="Anel.Portador" class="form-control" required>
+                        <option value="Elfos" selected="@(Model.Anel.Portador == "Elfos")">Elfos</option>
+                        <option value="Anões" selected="@(Model.Anel.Portador == "Anões")">Anões</option>
+                        <option value="Homens" selected="@(Model.Anel.Portador == "Homens")">Homens</option>
+                        <option value="Sauron" selected="@(Model.Anel.Portador == "Sauron")">Sauron</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="forjadoPor">Forjado Por:</label>
+                    <input type="text" id="forjadoPor" name="Anel.ForjadoPor" class="form-control" value="@Model.Anel.ForjadoPor" required />
+                </div>
+                <div class="form-group">
+                    <label for="imagem">URL da Imagem:</label>
+                    <input type="text" id="imagem" name="Anel.Imagem" class="form-control" value="@Model.Anel.Imagem" />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mt-3">Salvar</button>
+                    <a asp-page="Index" class="btn btn-secondary mt-3">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

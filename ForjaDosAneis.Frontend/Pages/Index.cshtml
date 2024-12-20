@@ -1,0 +1,76 @@
+﻿@page
+@model IndexModel
+@inject IHttpClientFactory HttpClientFactory
+
+<h1 class="text-center my-4">A Forja dos Anéis de Poder</h1>
+
+<div class="container">
+    <div class="row justify-content-center mb-4">
+        <div class="col-12 text-center">
+            <a asp-page="Create" class="btn btn-success btn-lg">Criar Novo Anel</a>
+        </div>
+    </div>
+
+    <div class="row">
+        @if (Model.Aneis.Any())
+        {
+            @foreach (var anel in Model.Aneis)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card h-100 text-center shadow-sm">
+                        <a asp-page="Edit" asp-route-id="@anel.Id">
+                            <img src="@anel.Imagem" alt="@anel.Nome" class="card-img-top mx-auto" style="object-fit: cover; height: 200px;" />
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">@anel.Nome</h5>
+                            <p class="card-text">
+                                <strong>Poder:</strong> @anel.Poder <br />
+                                <strong>Portador:</strong> @anel.Portador <br />
+                                <strong>Forjado por:</strong> @anel.ForjadoPor
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a asp-page="Edit" asp-route-id="@anel.Id" class="btn btn-primary mx-1">Editar</a>
+                            <a asp-page="Delete" asp-route-id="@anel.Id" class="btn btn-danger mx-1">Excluir</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <p class="text-center">Não há anéis cadastrados.</p>
+            </div>
+        }
+    </div>
+
+    <div class="row justify-content-center mb-4">
+        <div class="col-12">
+            <h1 class="text-center my-4">Lista de Anéis</h1>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Portador</th>
+                        <th>Cadastrados</th>
+                        <th>Restante</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var portador in Model.Portadores)
+                    {
+                        <tr>
+                            <td>@portador.Key</td>
+                            <td>
+                                <button class="btn btn-info">@portador.Value.Total</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-warning">@portador.Value.Limite</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+@page "{id:int}"
+@model DeleteModel
+@inject IHttpClientFactory HttpClientFactory
+
+<h1 class="text-center my-4">Excluir Anel</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <p>Tem certeza de que deseja excluir o anel <strong>@Model.Anel.Nome</strong>?</p>
+            <form method="post">
+                <button type="submit" class="btn btn-danger mx-2">Sim, excluir</button>
+                <a asp-page="./Index" class="btn btn-secondary mx-2">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
