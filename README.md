@@ -1,8 +1,8 @@
-# ForjaDosAneis.Api
+# ForjaDosAneis
 
 ## Descrição
 
-ForjaDosAneis.Api é uma API para gerenciar anéis mágicos, incluindo suas propriedades e portadores.
+ForjaDosAneis é um projeto feito para gerenciar anéis mágicos, incluindo suas propriedades e portadores.
 
 ## Tecnologias Utilizadas
 
